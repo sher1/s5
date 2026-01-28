@@ -75,9 +75,17 @@ ul.urls {list-style: none; display: inline; margin: 0;}
 html>body .external {border-bottom: none;}
 .external:after {content: " \274F"; font-size: smaller; color: #77B;}
 
-.incremental, .incremental *, .incremental *:after {color: #DDE; visibility: visible;}
-img.incremental {visibility: hidden;}
-.slide .current {color: #B02;}
+.slide {opacity: 0; transition: opacity 220ms ease;}
+.slide.active {opacity: 1; visibility: visible;}
+
+.incremental, .incremental *, .incremental *:after {color: #DDE; visibility: visible; opacity: 0; transform: translateY(0.2em); transition: opacity 200ms ease, transform 200ms ease;}
+.slide .current {color: #B02; opacity: 1; transform: translateY(0);}
+.slide .current {animation: incremental-reveal 220ms ease both;}
+
+@keyframes incremental-reveal {
+	from {opacity: 0; transform: translateY(0.2em);}
+	to {opacity: 1; transform: translateY(0);}
+}
 
 
 /* diagnostics
