@@ -1,89 +1,91 @@
+@import url(variables.css);
+
 /* Following are the presentation styles -- edit away! */
 
-body {background: #FFF url(bodybg.gif) -16px 0 no-repeat; color: #000; font-size: 2em;}
-:link, :visited {text-decoration: none; color: #00C;}
-#controls :active {color: #88A !important;}
-#controls :focus {outline: 1px dotted #227;}
+body {background: var(--s5-default-color-background) var(--s5-default-background-image) var(--s5-default-background-offset) 0 no-repeat; color: var(--s5-default-color-text); font-size: var(--s5-default-font-size-body);}
+:link, :visited {text-decoration: none; color: var(--s5-default-color-link);}
+#controls :active {color: var(--s5-default-color-control-active) !important;}
+#controls :focus {outline: var(--s5-default-border-width) dotted var(--s5-default-color-control-focus);}
 h1, h2, h3, h4 {font-size: 100%; margin: 0; padding: 0; font-weight: inherit;}
 ul, pre {margin: 0; line-height: 1em;}
 html, body {margin: 0; padding: 0;}
 
 blockquote, q {font-style: italic;}
-blockquote {padding: 0 2em 0.5em; margin: 0 1.5em 0.5em; text-align: center; font-size: 1em;}
+blockquote {padding: 0 var(--s5-default-space-two) var(--s5-default-space-half); margin: 0 var(--s5-default-space-one-and-half) var(--s5-default-space-half); text-align: center; font-size: var(--s5-default-font-size-base);}
 blockquote p {margin: 0;}
 blockquote i {font-style: normal;}
-blockquote b {display: block; margin-top: 0.5em; font-weight: normal; font-size: smaller; font-style: normal;}
+blockquote b {display: block; margin-top: var(--s5-default-space-half); font-weight: normal; font-size: smaller; font-style: normal;}
 blockquote b i {font-style: italic;}
 
-kbd {font-weight: bold; font-size: 1em;}
-sup {font-size: smaller; line-height: 1px;}
+kbd {font-weight: bold; font-size: var(--s5-default-font-size-base);}
+sup {font-size: smaller; line-height: var(--s5-default-line-height-tight);}
 
-.slide code {padding: 2px 0.25em; font-weight: bold; color: #533;}
-.slide code.bad, code del {color: red;}
-.slide code.old {color: silver;}
-.slide pre {padding: 0; margin: 0.25em 0 0.5em 0.5em; color: #533; font-size: 90%;}
+.slide code {padding: 2px var(--s5-default-space-quarter); font-weight: bold; color: var(--s5-default-color-code);}
+.slide code.bad, code del {color: var(--s5-default-color-code-error);}
+.slide code.old {color: var(--s5-default-color-muted);}
+.slide pre {padding: 0; margin: var(--s5-default-space-quarter) 0 var(--s5-default-space-half) var(--s5-default-space-half); color: var(--s5-default-color-code); font-size: var(--s5-default-font-size-secondary);}
 .slide pre code {display: block;}
 .slide ul {margin-left: 5%; margin-right: 7%; list-style: disc;}
-.slide li {margin-top: 0.75em; margin-right: 0;}
+.slide li {margin-top: var(--s5-default-space-three-quarters); margin-right: 0;}
 .slide ul ul {line-height: 1;}
 .slide ul ul li {margin: .2em; font-size: 85%; list-style: square;}
 .slide img.leader {display: block; margin: 0 auto;}
 
-div#header, div#footer {background: #005; color: #AAB;
-  font-family: Verdana, Helvetica, sans-serif;}
-div#header {background: #005 url(bodybg.gif) -16px 0 no-repeat;
-  line-height: 1px;}
-div#footer {font-size: 0.5em; font-weight: bold; padding: 1em 0;}
-#footer h1, #footer h2 {display: block; padding: 0 1em;}
+div#header, div#footer {background: var(--s5-default-color-chrome-background); color: var(--s5-default-color-chrome-text);
+  font-family: var(--s5-default-font-interface);}
+div#header {background: var(--s5-default-color-chrome-background) var(--s5-default-background-image) var(--s5-default-background-offset) 0 no-repeat;
+  line-height: var(--s5-default-line-height-tight);}
+div#footer {font-size: var(--s5-default-font-size-small); font-weight: bold; padding: var(--s5-default-space-one) 0;}
+#footer h1, #footer h2 {display: block; padding: 0 var(--s5-default-space-one);}
 #footer h2 {font-style: italic;}
 
-div.long {font-size: 0.75em;}
+div.long {font-size: var(--s5-default-font-size-long);}
 .slide h1 {position: absolute; top: 0.7em; left: 87px; z-index: 1;
   margin: 0; padding: 0.3em 0 0 50px; white-space: nowrap;
-  font: bold 150%/1em Helvetica, sans-serif; text-transform: capitalize;
-  color: #DDE; background: #005;}
+  font: bold 150%/var(--s5-default-font-size-base) var(--s5-default-font-heading); text-transform: capitalize;
+  color: var(--s5-default-color-heading); background: var(--s5-default-color-chrome-background);}
 .slide h3 {font-size: 130%;}
 h1 abbr {font-variant: small-caps;}
 
-div#controls {position: absolute; left: 50%; bottom: 0;
-  width: 50%;
-  text-align: right; font: bold 0.9em Verdana, Helvetica, sans-serif;}
-html>body div#controls {position: fixed; padding: 0 0 1em 0;
+div#controls {position: absolute; left: var(--s5-default-controls-width); bottom: 0;
+  width: var(--s5-default-controls-width);
+  text-align: right; font: bold 0.9em var(--s5-default-font-interface);}
+html>body div#controls {position: fixed; padding: 0 0 var(--s5-default-space-one) 0;
   top: auto;}
 div#controls form {position: absolute; bottom: 0; right: 0; width: 100%;
   margin: 0; padding: 0;}
-#controls #navLinks a {padding: 0; margin: 0 0.5em; 
-  background: #005; border: none; color: #779; 
+#controls #navLinks a {padding: 0; margin: 0 var(--s5-default-space-half);
+  background: var(--s5-default-color-chrome-background); border: none; color: var(--s5-default-color-navigation);
   cursor: pointer;}
 #controls #navList {height: 1em;}
-#controls #navList #jumplist {position: absolute; bottom: 0; right: 0; background: #DDD; color: #227;}
+#controls #navList #jumplist {position: absolute; bottom: 0; right: 0; background: var(--s5-default-color-select-background); color: var(--s5-default-color-control-focus);}
 
-#currentSlide {text-align: center; font-size: 0.5em; color: #449;}
+#currentSlide {text-align: center; font-size: var(--s5-default-font-size-small); color: var(--s5-default-color-slide-counter);}
 
-#slide0 {padding-top: 3.5em; font-size: 90%;}
-#slide0 h1 {position: static; margin: 1em 0 0; padding: 0;
-   font: bold 2em Helvetica, sans-serif; white-space: normal;
-   color: #000; background: transparent;}
-#slide0 h2 {font: bold italic 1em Helvetica, sans-serif; margin: 0.25em;}
-#slide0 h3 {margin-top: 1.5em; font-size: 1.5em;}
-#slide0 h4 {margin-top: 0; font-size: 1em;}
+#slide0 {padding-top: var(--s5-default-slide-padding-top); font-size: var(--s5-default-font-size-secondary);}
+#slide0 h1 {position: static; margin: var(--s5-default-space-one) 0 0; padding: 0;
+   font: bold var(--s5-default-font-size-body) var(--s5-default-font-heading); white-space: normal;
+   color: var(--s5-default-color-text); background: transparent;}
+#slide0 h2 {font: bold italic var(--s5-default-font-size-base) var(--s5-default-font-heading); margin: var(--s5-default-space-quarter);}
+#slide0 h3 {margin-top: var(--s5-default-space-one-and-half); font-size: 1.5em;}
+#slide0 h4 {margin-top: 0; font-size: var(--s5-default-font-size-base);}
 
 ul.urls {list-style: none; display: inline; margin: 0;}
 .urls li {display: inline; margin: 0;}
 .note {display: none;}
-.external {border-bottom: 1px dotted gray;}
+.external {border-bottom: var(--s5-default-border-width) dotted var(--s5-default-color-border);}
 html>body .external {border-bottom: none;}
-.external:after {content: " \274F"; font-size: smaller; color: #77B;}
+.external:after {content: " \274F"; font-size: smaller; color: var(--s5-default-color-external-link);}
 
-.slide {opacity: 0; transition: opacity 220ms ease;}
+.slide {opacity: 0; transition: opacity var(--s5-default-duration-reveal) var(--s5-default-motion-easing);}
 .slide.active {opacity: 1; visibility: visible;}
 
-.incremental, .incremental *, .incremental *:after {color: #DDE; visibility: visible; opacity: 0; transform: translateY(0.2em); transition: opacity 200ms ease, transform 200ms ease;}
-.slide .current {color: #B02; opacity: 1; transform: translateY(0);}
-.slide .current {animation: incremental-reveal 220ms ease both;}
+.incremental, .incremental *, .incremental *:after {color: var(--s5-default-color-heading); visibility: visible; opacity: 0; transform: translateY(var(--s5-default-incremental-offset)); transition: opacity var(--s5-default-duration-incremental) var(--s5-default-motion-easing), transform var(--s5-default-duration-incremental) var(--s5-default-motion-easing);}
+.slide .current {color: var(--s5-default-color-current); opacity: 1; transform: translateY(0);}
+.slide .current {animation: incremental-reveal var(--s5-default-duration-reveal) var(--s5-default-motion-easing) both;}
 
 @keyframes incremental-reveal {
-	from {opacity: 0; transform: translateY(0.2em);}
+	from {opacity: 0; transform: translateY(var(--s5-default-incremental-offset));}
 	to {opacity: 1; transform: translateY(0);}
 }
 

@@ -1,44 +1,46 @@
+@import url(variables.css);
+
 /*
  Theme: i18n
  Eric A. Meyer (http://meyerweb.com/)
  Theme placed under CC by-sa 2.0 license
 */
 
-body {background: #95A7D4 url(bg-slide.jpg) 100% 100% no-repeat; color: #210; font: 28px Arial, sans-serif;}
-a {text-decoration: none; color: #336; border-bottom: 1px dotted;}
-h1, h2, h3, h4, h5, h6 {font-size: 1em; margin: 0;}
-sup {font-size: 0.75em; font-weight: normal;
-  vertical-align: 0.5em; line-height: 1px;}
-ul {margin-left: 1em; padding-left: 0;}
+body {background: var(--s5-i18n-color-background) url(bg-slide.jpg) 100% 100% no-repeat; color: var(--s5-i18n-color-text); font: var(--s5-i18n-font-size-body) var(--s5-i18n-font-body);}
+a {text-decoration: none; color: var(--s5-i18n-color-link); border-bottom: var(--s5-i18n-border-width) dotted;}
+h1, h2, h3, h4, h5, h6 {font-size: var(--s5-i18n-font-size-base); margin: 0;}
+sup {font-size: var(--s5-i18n-font-size-secondary); font-weight: normal;
+  vertical-align: 0.5em; line-height: var(--s5-i18n-line-height-tight);}
+ul {margin-left: var(--s5-i18n-space-one); padding-left: 0;}
 li {margin-bottom: 0.66em;}
-li li {margin: 0.33em 0; font-size: smaller;}
+li li {margin: var(--s5-i18n-space-third) 0; font-size: smaller;}
 
-#header {background: url(bg-shade.png); border-bottom: 1px solid #333;
-  padding-bottom: 2em;}
-#footer {background: url(bg-shade.png); color: #BBB; border-top: 1px solid #333;}
-#header, #footer {font-size: 0.5em;}
-#footer h1, #footer h2 { padding: 0.5em 0.75em;
+#header {background: var(--s5-i18n-chrome-background-image); border-bottom: var(--s5-i18n-border-width) solid var(--s5-i18n-color-border);
+  padding-bottom: var(--s5-i18n-space-two);}
+#footer {background: var(--s5-i18n-chrome-background-image); color: var(--s5-i18n-color-chrome-text); border-top: var(--s5-i18n-border-width) solid var(--s5-i18n-color-border);}
+#header, #footer {font-size: var(--s5-i18n-font-size-small);}
+#footer h1, #footer h2 { padding: var(--s5-i18n-space-half) var(--s5-i18n-space-three-quarters);
   font-weight: normal; font-style: italic;}
-#footer h1 {left: 0; font-size: 1em; letter-spacing: 1px;}
+#footer h1 {left: 0; font-size: var(--s5-i18n-font-size-base); letter-spacing: var(--s5-i18n-letter-spacing-footer);}
 #footer h2 {position: absolute; bottom: 0; right: 0;}
 
-#controls {font-size: 0.75em;}
+#controls {font-size: var(--s5-i18n-font-size-secondary);}
 #navList {margin-top: 3px;}
-#navLinks a {margin: 0 0.33em; padding: 0 0.25em;
-  border: 1px solid; border-color: #CCD #556 #556 #CCD;
-  background-color: #8597C4;}
+#navLinks a {margin: 0 var(--s5-i18n-space-third); padding: 0 var(--s5-i18n-space-quarter);
+  border: var(--s5-i18n-border-width) solid; border-color: var(--s5-i18n-color-control-border-light) var(--s5-i18n-color-control-border-dark) var(--s5-i18n-color-control-border-dark) var(--s5-i18n-color-control-border-light);
+  background-color: var(--s5-i18n-color-control-background);}
 
-#currentSlide {font-size: 0.5em;}
-#currentSlide span {font-size: 13px; color: rgb(49%,47%,66%);}
+#currentSlide {font-size: var(--s5-i18n-font-size-small);}
+#currentSlide span {font-size: 13px; color: var(--s5-i18n-color-slide-counter);}
 #currentSlide #csSep {display: none;}
 #currentSlide #csHere {font-weight: bold;}
 #currentSlide #csHere:before {content: "#"; font-weight: normal;}
 #currentSlide #csTotal:before {content: " of ";}
 
 .slide h1 {font-size: 1.66em; line-height: 1; letter-spacing: -1px;
-  margin: 0 -15% 1em 0; padding: 0.5em 15% 0.06125em 0; border-bottom: 0.06125em solid rgb(90,94,120);}
-#slide0 h1 {border: none; font-size: 2.25em; letter-spacing: 0; margin: 3em 0 1.5em;}
-#slide0 h3 {margin: 0.5em 0 0;}
+  margin: 0 -15% var(--s5-i18n-space-one) 0; padding: var(--s5-i18n-space-half) 15% var(--s5-i18n-heading-border-width) 0; border-bottom: var(--s5-i18n-heading-border-width) solid var(--s5-i18n-color-heading-border);}
+#slide0 h1 {border: none; font-size: 2.25em; letter-spacing: 0; margin: 3em 0 var(--s5-i18n-space-one-and-half);}
+#slide0 h3 {margin: var(--s5-i18n-space-half) 0 0;}
 #slide0 h4 {margin-top: 0; font-size: smaller;}
 
-.slide .current {color: #003; text-shadow: 0 0 0.25em #9AABD7;}
+.slide .current {color: var(--s5-i18n-color-current); text-shadow: 0 0 0.25em var(--s5-i18n-color-current-shadow);}

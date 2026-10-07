@@ -1,0 +1,32 @@
+/* Shared theme values. Override these on :root to customize this view. */
+:root {
+  --s5-i18n-space-one: 1em;
+  --s5-i18n-space-two: 2em;
+  --s5-i18n-space-half: 0.5em;
+  --s5-i18n-color-background: #95A7D4;
+  --s5-i18n-color-text: #210;
+  --s5-i18n-font-size-body: 28px;
+  --s5-i18n-font-body: Arial, sans-serif;
+  --s5-i18n-color-link: #336;
+  --s5-i18n-border-width: 1px;
+  --s5-i18n-font-size-base: 1em;
+  --s5-i18n-font-size-secondary: 0.75em;
+  --s5-i18n-space-third: 0.33em;
+  --s5-i18n-color-border: #333;
+  --s5-i18n-color-chrome-text: #BBB;
+  --s5-i18n-font-size-small: 0.5em;
+  --s5-i18n-space-three-quarters: 0.75em;
+  --s5-i18n-space-quarter: 0.25em;
+  --s5-i18n-color-control-border-light: #CCD;
+  --s5-i18n-color-control-border-dark: #556;
+  --s5-i18n-color-control-background: #8597C4;
+  --s5-i18n-color-slide-counter: rgb(49%,47%,66%);
+  --s5-i18n-heading-border-width: 0.06125em;
+  --s5-i18n-color-heading-border: rgb(90,94,120);
+  --s5-i18n-space-one-and-half: 1.5em;
+  --s5-i18n-color-current: #003;
+  --s5-i18n-color-current-shadow: #9AABD7;
+  --s5-i18n-line-height-tight: 1px;
+  --s5-i18n-letter-spacing-footer: 1px;
+  --s5-i18n-chrome-background-image: url(bg-shade.png);
+}

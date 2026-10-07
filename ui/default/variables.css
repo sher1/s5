@@ -1,0 +1,48 @@
+/* Shared theme values. Override these on :root to customize this view. */
+:root {
+  --s5-default-slide-padding-top: 3.5em;
+  --s5-default-controls-width: 50%;
+  --s5-default-space-one: 1em;
+  --s5-default-color-background: #FFF;
+  --s5-default-background-offset: -16px;
+  --s5-default-color-text: #000;
+  --s5-default-color-link: #00C;
+  --s5-default-color-control-active: #88A;
+  --s5-default-border-width: 1px;
+  --s5-default-color-control-focus: #227;
+  --s5-default-space-two: 2em;
+  --s5-default-space-half: 0.5em;
+  --s5-default-space-one-and-half: 1.5em;
+  --s5-default-font-size-base: 1em;
+  --s5-default-space-quarter: 0.25em;
+  --s5-default-color-code: #533;
+  --s5-default-color-code-error: red;
+  --s5-default-color-muted: silver;
+  --s5-default-font-size-secondary: 90%;
+  --s5-default-space-three-quarters: 0.75em;
+  --s5-default-color-chrome-background: #005;
+  --s5-default-color-chrome-text: #AAB;
+  --s5-default-font-interface: Verdana, Helvetica, sans-serif;
+  --s5-default-font-size-small: 0.5em;
+  --s5-default-font-size-long: 0.75em;
+  --s5-default-font-heading: Helvetica, sans-serif;
+  --s5-default-color-heading: #DDE;
+  --s5-default-color-navigation: #779;
+  --s5-default-color-select-background: #DDD;
+  --s5-default-color-slide-counter: #449;
+  --s5-default-color-border: gray;
+  --s5-default-color-external-link: #77B;
+  --s5-default-duration-reveal: 220ms;
+  --s5-default-duration-incremental: 200ms;
+  --s5-default-color-current: #B02;
+  --s5-default-color-outline-border-top: #888;
+  --s5-default-color-outline-border-bottom: #AAA;
+  --s5-default-print-background: white;
+  --s5-default-print-text: black;
+  --s5-default-print-extra-text: #333;
+  --s5-default-line-height-tight: 1px;
+  --s5-default-background-image: url(bodybg.gif);
+  --s5-default-incremental-offset: 0.2em;
+  --s5-default-motion-easing: ease;
+  --s5-default-font-size-body: 2em;
+}

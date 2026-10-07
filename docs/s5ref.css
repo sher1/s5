@@ -1,39 +1,41 @@
-#main h3 {margin-top: 3em; padding: 0.33em 0.2em 0.1em;
-  border: 1px solid gray; border-width: 1px 0;}
+@import url(variables.css);
 
-#main pre.example {color: #333; font-weight: normal;}
+#main h3 {margin-top: var(--s5-docs-space-three); padding: 0.33em 0.2em 0.1em;
+  border: var(--s5-docs-border-width) solid var(--s5-docs-color-border); border-width: var(--s5-docs-border-width) 0;}
 
-#main pre i, dt i {font-weight: normal; color: #AAA;}
-#main p i {color: #666;}
-#main p {margin: 1em;}
+#main pre.example {color: var(--s5-docs-color-example); font-weight: normal;}
 
-#main dl {margin: 1em 1em 1.5em 2em;}
-#main dt {margin-top: 1.5em; font: 1em Courier, monospace;
+#main pre i, dt i {font-weight: normal; color: var(--s5-docs-color-code-muted);}
+#main p i {color: var(--s5-docs-color-generated);}
+#main p {margin: var(--s5-docs-space-one);}
+
+#main dl {margin: var(--s5-docs-space-one) var(--s5-docs-space-one) var(--s5-docs-space-one-and-half) var(--s5-docs-space-two);}
+#main dt {margin-top: var(--s5-docs-space-one-and-half); font: var(--s5-docs-font-size-base) var(--s5-docs-font-code);
    letter-spacing: -0.05em; white-space: pre;}
-#main dd {margin: 0.5em 0 0 2.5em;}
-#main dl dl {margin: 0.5em 1em 1em 0.5em;}
-#main dl dl dt {margin-top: 0.75em;}
-#main dl dl dd {margin: 0.25em 0 0 1.5em;}
+#main dd {margin: var(--s5-docs-space-half) 0 0 2.5em;}
+#main dl dl {margin: var(--s5-docs-space-half) var(--s5-docs-space-one) var(--s5-docs-space-one) var(--s5-docs-space-half);}
+#main dl dl dt {margin-top: var(--s5-docs-space-three-quarters);}
+#main dl dl dd {margin: var(--s5-docs-space-quarter) 0 0 var(--s5-docs-space-one-and-half);}
 
 pre > span, 
-.optional {color: #337; font-weight: normal;}
-.recommended {color: #000; font-weight: bold;}
-.required {color: #500; font-weight: bold;}
-.generated {color: #666; font-style: italic;}
+.optional {color: var(--s5-docs-color-optional); font-weight: normal;}
+.recommended {color: var(--s5-docs-color-recommended); font-weight: bold;}
+.required {color: var(--s5-docs-color-required); font-weight: bold;}
+.generated {color: var(--s5-docs-color-generated); font-style: italic;}
 
 dt[class] {border-left: 1em solid; padding-left: 0.66em;}
-dt.required {border-color: #500; color: #500;}
-dt.optional {border-color: #77B;}
-dt.recommended {border-color: gray;}
-dt.generated {border-color: #CCC;}
-dt.generated + dd {color: #999;}
+dt.required {border-color: var(--s5-docs-color-required); color: var(--s5-docs-color-required);}
+dt.optional {border-color: var(--s5-docs-color-optional-border);}
+dt.recommended {border-color: var(--s5-docs-color-border);}
+dt.generated {border-color: var(--s5-docs-color-generated-border);}
+dt.generated + dd {color: var(--s5-docs-color-generated-description);}
 dt.required + dd:before {content: "Required. "; font-weight: bold; 
-color: #500;}
+color: var(--s5-docs-color-required);}
 dt.optional + dd:before {content: "Optional. "; font-style: italic; 
-color: #333;}
+color: var(--s5-docs-color-example);}
 dt.recommended + dd:before {content: "Recommended. "; 
-  color: #000; font-weight: bold;}
+  color: var(--s5-docs-color-recommended); font-weight: bold;}
 dt.generated + dd:before {content: "[generated] "; 
-  color: #666;}
+  color: var(--s5-docs-color-generated);}
 
 #main hr {margin-top: 5em;}

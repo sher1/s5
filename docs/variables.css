@@ -1,0 +1,29 @@
+/* Shared theme values. Override these on :root to customize this view. */
+:root {
+  --s5-docs-space-three: 3em;
+  --s5-docs-space-one: 1em;
+  --s5-docs-space-one-and-half: 1.5em;
+  --s5-docs-border-width: 1px;
+  --s5-docs-color-sidebar-border: rgba(16,0,0,0.5);
+  --s5-docs-color-sidebar-background: #FED5;
+  --s5-docs-font-sidebar: Eczar;
+  --s5-docs-font-size-secondary: 90%;
+  --s5-docs-space-quarter: 0.25em;
+  --s5-docs-space-half: 0.5em;
+  --s5-docs-color-warning-text: #633;
+  --s5-docs-color-warning-background: #FFA;
+  --s5-docs-space-two: 2em;
+  --s5-docs-color-border: gray;
+  --s5-docs-color-example: #333;
+  --s5-docs-color-code-muted: #AAA;
+  --s5-docs-color-generated: #666;
+  --s5-docs-font-size-base: 1em;
+  --s5-docs-font-code: Courier, monospace;
+  --s5-docs-space-three-quarters: 0.75em;
+  --s5-docs-color-optional: #337;
+  --s5-docs-color-recommended: #000;
+  --s5-docs-color-required: #500;
+  --s5-docs-color-optional-border: #77B;
+  --s5-docs-color-generated-border: #CCC;
+  --s5-docs-color-generated-description: #999;
+}

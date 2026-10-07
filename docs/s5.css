@@ -1,3 +1,5 @@
+@import url(variables.css);
+
 body {
 	grid-template-columns: [left] minmax(1em,1fr) [main] minmax(10em,40em) [right] minmax(10em,1.5fr);
 }
@@ -7,27 +9,27 @@ body {
 #extra {
 	grid-row: 3;
 	grid-column: right;
-	margin: 3em 0 0 15%;
-	padding: 0 1em 1.5em;
-	border: 1px solid rgba(16,0,0,0.5);
+	margin: var(--s5-docs-space-three) 0 0 15%;
+	padding: 0 var(--s5-docs-space-one) var(--s5-docs-space-one-and-half);
+	border: var(--s5-docs-border-width) solid var(--s5-docs-color-sidebar-border);
 	border-right: none;
-	border-radius: 1em 0 0 1em;
-	background: #FED5;
-	font-family: Eczar;
-	font-size: 90%;
+	border-radius: var(--s5-docs-space-one) 0 0 var(--s5-docs-space-one);
+	background: var(--s5-docs-color-sidebar-background);
+	font-family: var(--s5-docs-font-sidebar);
+	font-size: var(--s5-docs-font-size-secondary);
 }
 #extra h4 {
-	margin-top: 1em;
+	margin-top: var(--s5-docs-space-one);
 }
 #extra ul {
 	list-style: none;
 }
 #extra li {
-	margin-bottom: 0.25em;
+	margin-bottom: var(--s5-docs-space-quarter);
 }
 #extra p {
 	margin-top: 0;
-	margin-bottom: 0.5em;
+	margin-bottom: var(--s5-docs-space-half);
 	padding-bottom: 0;
 	text-indent: 0;
 }
@@ -35,5 +37,5 @@ body {
 	font-weight: 600;
 }
 
-#extra .warning {color: #633; background: #FFA; padding: 1em; margin-left: 2em;}
+#extra .warning {color: var(--s5-docs-color-warning-text); background: var(--s5-docs-color-warning-background); padding: var(--s5-docs-space-one); margin-left: var(--s5-docs-space-two);}
 #extra .warning a {text-decoration: underline;}

@@ -8,6 +8,8 @@ This copy is made public as a historical reference, **not** as an active project
 
 Regression note: the modernized `ui/default/slides.js` intentionally drops legacy browser compatibility shims (notably IE/Opera/old Gecko behaviors) in favor of standard DOM APIs and modern event handling. If you need legacy browser support, use or restore the original script.
 
+To customize colors, font families, shared font sizes, spacing, and animation values, edit `ui/default/variables.css`, `ui/i18n/variables.css`, or `docs/variables.css`. Each defines CSS custom properties on `:root`, with separate prefixes for each theme and the documentation. The stylesheets import their variables directly, including the independently loaded outline and print styles. You can also override these properties in a stylesheet or style block loaded after the theme. CSS custom properties require a modern browser.
+
 Note that S5, as it exists here, is good mostly for text-heavy bullet-point slides.  Images can be added, but will require extra styling to manage.  There are no transition effects, either between slides or of content within a slide; such effects were too computationally expensive in 2005, and the CSS necessary to make most of them work hadn’t been invented yet.  Much better browser-based slideshow systems have been invented in the 15 years between S5 and when this repository went public, and should be investigated if you’re looking for a robust browser-based slideshow solution.  Again, this is a historical document more than anything else.
 
 Somewhere along the way, S5 picked up [a Wikipedia entry](https://en.wikipedia.org/wiki/S5_(file_format)), a fact which remains entirely baffling.
