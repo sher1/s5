@@ -1,0 +1,30 @@
+/* Behavior shared by both slide themes. Print retains its own typography. */
+@media screen, projection {
+  html.s5-slideshow {
+    --s5-font-scale-width: 32;
+    --s5-font-scale-height: 22;
+  }
+
+  html.s5-slideshow body {
+    font-size: calc(100vw / var(--s5-font-scale-width));
+  }
+
+  /* Choose the smaller scale, matching the previous viewport calculation. */
+  @media (min-aspect-ratio: 16/11) {
+    html.s5-slideshow body {
+      font-size: calc(100vh / var(--s5-font-scale-height));
+    }
+  }
+
+  html.s5-slideshow .slide {visibility: hidden;}
+  html.s5-slideshow .slide.active {visibility: visible;}
+  html.s5-slideshow #currentSlide.is-title {visibility: hidden;}
+
+  html.s5-slideshow .hideme.controls-pinned,
+  html.s5-slideshow #controls.controls-hidden #controlForm:hover .hideme,
+  html.s5-slideshow #controls.controls-hidden #controlForm:focus-within .hideme,
+  html.s5-slideshow #controls:not(.controls-hidden) #navList:hover .hideme,
+  html.s5-slideshow #controls:not(.controls-hidden) #navList:focus-within .hideme {
+    visibility: visible;
+  }
+}

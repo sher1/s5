@@ -1,21 +1,22 @@
 @import url(variables.css);
 
+@media screen, projection {
 /* The following styles size and place the slide components.
    Edit them if you want to change the overall slide layout.
    The commented lines can be uncommented (and modified, if necessary) 
     to help you with the rearrangement process. */
 
-div#header, div#footer, .slide {width: 100%; top: 0; left: 0;}
-div#header {top: 0; left: 0; z-index: 1;}
-div#footer {top: auto; bottom: 0; width: 100%; z-index: 5;}
-.slide {top: 0; width: 88%; padding: var(--s5-i18n-space-one) 7% var(--s5-i18n-space-two) 5%; z-index: 2;}
+html.s5-slideshow div#header, html.s5-slideshow div#footer, html.s5-slideshow .slide {width: 100%; top: 0; left: 0;}
+html.s5-slideshow div#header {top: 0; left: 0; z-index: 1;}
+html.s5-slideshow div#footer {top: auto; bottom: 0; width: 100%; z-index: 5;}
+html.s5-slideshow .slide {top: 0; width: 88%; padding: var(--s5-i18n-space-one) 7% var(--s5-i18n-space-two) 5%; z-index: 2;}
 
-div#controls {bottom: var(--s5-i18n-space-one); left: 0; width: 100%; text-align: center; z-index: 1000;}
-div#controls form {margin: 0; padding: 0;}
+html.s5-slideshow div#controls {bottom: var(--s5-i18n-space-one); left: 0; width: 100%; text-align: center; z-index: 1000;}
+html.s5-slideshow div#controls form {margin: 0; padding: 0;}
 
-#currentSlide {position: absolute; left: 0; bottom: var(--s5-i18n-space-half); z-index: 10;
+html.s5-slideshow #currentSlide {position: absolute; left: 0; bottom: var(--s5-i18n-space-half); z-index: 10;
   width: 100%; text-align: center;}
-html>body #currentSlide {position: fixed;}
+html.s5-slideshow>body #currentSlide {position: fixed;}
 
 /*
 div#header {background: #FCC;}
@@ -23,3 +24,4 @@ div#footer {background: #CCF;}
 div#controls {background: #BBD;}
 div#currentSlide {background: #FFC;}
 */
+}

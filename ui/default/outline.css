@@ -1,17 +1,19 @@
 @import url(variables.css);
 
+@media screen {
 /* don't change this unless you want the layout stuff to show up in the outline view! */
 
-.layout div, #footer *, #controlForm * {display: none;}
-#footer, #controls, #controlForm, #navLinks, #toggle {
+html:not(.s5-slideshow) .layout div, html:not(.s5-slideshow) #footer *, html:not(.s5-slideshow) #controlForm * {display: none;}
+html:not(.s5-slideshow) #footer, html:not(.s5-slideshow) #controls, html:not(.s5-slideshow) #controlForm, html:not(.s5-slideshow) #navLinks, html:not(.s5-slideshow) #toggle {
   display: block; visibility: visible; margin: 0; padding: 0;}
-#toggle {float: right; padding: var(--s5-default-space-half);}
-html>body #toggle {position: fixed; top: 0; right: 0;}
+html:not(.s5-slideshow) #toggle {float: right; padding: var(--s5-default-space-half);}
+html:not(.s5-slideshow)>body #toggle {position: fixed; top: 0; right: 0;}
 
 /* making the outline look pretty-ish */
 
-#slide0 h1, #slide0 h2, #slide0 h3, #slide0 h4 {border: none; margin: 0;}
-#slide0 h1 {padding-top: var(--s5-default-space-one-and-half);}
-.slide h1 {margin: var(--s5-default-space-one-and-half) 0 0; padding-top: var(--s5-default-space-quarter);
+html:not(.s5-slideshow) #slide0 h1, html:not(.s5-slideshow) #slide0 h2, html:not(.s5-slideshow) #slide0 h3, html:not(.s5-slideshow) #slide0 h4 {border: none; margin: 0;}
+html:not(.s5-slideshow) #slide0 h1 {padding-top: var(--s5-default-space-one-and-half);}
+html:not(.s5-slideshow) .slide h1 {margin: var(--s5-default-space-one-and-half) 0 0; padding-top: var(--s5-default-space-quarter);
   border-top: var(--s5-default-border-width) solid var(--s5-default-color-outline-border-top); border-bottom: var(--s5-default-border-width) solid var(--s5-default-color-outline-border-bottom);}
-#toggle {border: var(--s5-default-border-width) solid; border-width: 0 0 var(--s5-default-border-width) var(--s5-default-border-width); background: var(--s5-default-color-background);}
+html:not(.s5-slideshow) #toggle {border: var(--s5-default-border-width) solid; border-width: 0 0 var(--s5-default-border-width) var(--s5-default-border-width); background: var(--s5-default-color-background);}
+}

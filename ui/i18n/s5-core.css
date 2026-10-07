@@ -1,9 +1,10 @@
-/* Do not edit or override these styles! The system will likely break if you do. */
 
-div#header, div#footer, div#controls, div.slide {position: absolute;}
-html>body div#header, html>body div#footer, 
-  html>body div#controls, html>body div.slide {position: fixed;}
-.handout {display: none;}
-.layout {display: block;}
-div.slide, .hideme, .incremental {visibility: hidden;}
-#slide0 {visibility: visible;}
+@media screen, projection {
+/* Core presentation layout, active only in slideshow mode. */
+
+html.s5-slideshow div#header, html.s5-slideshow div#footer, html.s5-slideshow div#controls, html.s5-slideshow div.slide {position: absolute;}
+html.s5-slideshow>body div#header, html.s5-slideshow>body div#footer, html.s5-slideshow>body div#controls, html.s5-slideshow>body div.slide {position: fixed;}
+html.s5-slideshow .handout {display: none;}
+html.s5-slideshow .layout {display: block;}
+html.s5-slideshow div.slide, html.s5-slideshow .hideme, html.s5-slideshow .incremental {visibility: hidden;}
+}

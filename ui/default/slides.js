@@ -15,7 +15,6 @@
 	let controlVis = 'visible';
 	let slides = [];
 	let incrementals = [];
-	let resizeRaf = 0;
 
 	function hasValue(valueList, value) {
 		if (typeof valueList !== 'string') return false;
@@ -77,12 +76,11 @@
 		cs.appendChild(document.createTextNode(' '));
 		cs.appendChild(total);
 
-		cs.style.visibility = snum === 0 ? 'hidden' : 'visible';
+		cs.classList.toggle('is-title', snum === 0);
 	}
 
 	function go(step) {
-		const slideProj = document.getElementById('slideProj');
-		if ((slideProj && slideProj.disabled) || step === 0) return;
+		if (!s5mode || step === 0) return;
 
 		const jl = document.getElementById('jumplist');
 		const currentId = `slide${snum}`;
@@ -125,11 +123,9 @@
 
 		if (currentEl) {
 			currentEl.classList.remove('active');
-			currentEl.style.visibility = 'hidden';
 		}
 		if (nextEl) {
 			nextEl.classList.add('active');
-			nextEl.style.visibility = 'visible';
 		}
 		if (jl) jl.selectedIndex = snum;
 		currentSlide();
@@ -166,50 +162,13 @@
 	}
 
 	function toggle() {
-		const slideProj = document.getElementById('slideProj');
-		const outline = document.getElementById('outlineStyle');
-		if (!slideProj || !outline) return;
-		if (!slideProj.disabled) {
-			slideProj.disabled = true;
-			outline.disabled = false;
-			s5mode = false;
-			fontSize('1em');
-			for (let n = 0; n < smax; n++) {
-				slides[n].style.visibility = 'visible';
-				slides[n].classList.add('active');
-			}
-		} else {
-			slideProj.disabled = false;
-			outline.disabled = true;
-			s5mode = true;
-			fontScale();
-			for (let n = 0; n < smax; n++) {
-				slides[n].style.visibility = 'hidden';
-				slides[n].classList.remove('active');
-			}
-			if (slides[snum]) {
-				slides[snum].style.visibility = 'visible';
-				slides[snum].classList.add('active');
-			}
-		}
+		s5mode = !s5mode;
+		document.documentElement.classList.toggle('s5-slideshow', s5mode);
 	}
 
-	function showHide(action) {
+	function showHide() {
 		const obj = document.querySelector('.hideme');
-		if (!obj) return;
-		switch (action) {
-			case 's':
-				obj.style.visibility = 'visible';
-				break;
-			case 'h':
-				obj.style.visibility = 'hidden';
-				break;
-			case 'k':
-				obj.style.visibility = obj.style.visibility !== 'visible' ? 'visible' : 'hidden';
-				break;
-			default:
-				break;
-		}
+		if (obj) obj.classList.toggle('controls-pinned');
 	}
 
 	function isHandledKeyTarget(eventTarget) {
@@ -275,7 +234,7 @@
 				event.preventDefault();
 				break;
 			case 67: // c
-				showHide('k');
+				showHide();
 				event.preventDefault();
 				break;
 			default:
@@ -293,8 +252,7 @@
 
 	function clicker(event) {
 		number = null;
-		const slideProj = document.getElementById('slideProj');
-		if (slideProj && slideProj.disabled) return true;
+		if (!s5mode) return true;
 
 		let target = event.target || event.srcElement;
 		if (!target) return true;
@@ -358,8 +316,7 @@
 				const dest = findSlide(match[0].slice(1));
 				if (dest !== null) {
 					anchor.addEventListener('click', (event) => {
-						const slideProj = document.getElementById('slideProj');
-						if (slideProj && slideProj.disabled) return;
+						if (!s5mode) return;
 						go(dest - snum);
 						event.preventDefault();
 					}, true);
@@ -441,47 +398,13 @@
 		const hiddenElement = controlVis === 'hidden' ? navLinks : jumpList;
 		hiddenElement.classList.add('hideme');
 
-		const hoverTarget = controlVis === 'hidden' ? form : navList;
-		hoverTarget.addEventListener('mouseover', () => showHide('s'));
-		hoverTarget.addEventListener('mouseout', () => showHide('h'));
-	}
-
-	function fontScale() { // causes layout problems in FireFox that get fixed if browser's Reload is used; same may be true of other Gecko-based browsers
-		if (!s5mode) return false;
-		const vScale = 22; // both yield 32 (after rounding) at 1024x768
-		const hScale = 32; // perhaps should auto-calculate based on theme's declared value?
-
-		const vSize = window.innerHeight
-			|| (document.documentElement && document.documentElement.clientHeight)
-			|| (document.body && document.body.clientHeight)
-			|| 700; // assuming 1024x768, minus chrome and such
-		const hSize = window.innerWidth
-			|| (document.documentElement && document.documentElement.clientWidth)
-			|| (document.body && document.body.clientWidth)
-			|| 1024; // these do not account for kiosk mode or Opera Show
-
-		const newSize = Math.min(Math.round(vSize / vScale), Math.round(hSize / hScale));
-		fontSize(`${newSize}px`);
-		return true;
-	}
-
-	function fontSize(value) {
-		let s5ss = document.getElementById('s5ss');
-		if (!s5ss) {
-			s5ss = document.createElement('style');
-			s5ss.setAttribute('media', 'screen, projection');
-			s5ss.setAttribute('id', 's5ss');
-			document.getElementsByTagName('head')[0].appendChild(s5ss);
-		}
-		s5ss.textContent = `body {font-size: ${value} !important;}`;
+		controlsDiv.classList.toggle('controls-hidden', controlVis === 'hidden');
 	}
 
 	function initSlideStyles() {
 		const slidesLink = document.getElementById('slideProj');
-		const outline = document.getElementById('outlineStyle');
-		if (!slidesLink || !outline) return;
-		slidesLink.setAttribute('media', 'screen');
-		outline.disabled = true;
+		if (slidesLink) slidesLink.setAttribute('media', 'screen, projection');
+		document.documentElement.classList.add('s5-slideshow');
 	}
 
 	function getIncrementals(obj) {
@@ -538,24 +461,17 @@
 		slideLabel();
 		fixLinks();
 		externalLinks();
-		fontScale();
 		initSlideStyles();
 		incrementals = createIncrementals();
 		slideJump();
 		if (defaultView === 'outline') {
 			toggle();
 		}
-		if (slides[0] && !slides[0].classList.contains('active')) {
-			slides[0].classList.add('active');
-		}
+		if (slides[snum]) slides[snum].classList.add('active');
 		currentSlide();
 
 		document.addEventListener('keydown', keys);
 		document.addEventListener('click', clicker);
-		window.addEventListener('resize', () => {
-			if (resizeRaf) window.cancelAnimationFrame(resizeRaf);
-			resizeRaf = window.requestAnimationFrame(fontScale);
-		});
 	}
 
 	window.addEventListener('load', startup);
